@@ -22,7 +22,7 @@ public class SignInController {
     private Button ButtonSignin;
 
     @FXML
-    private Label lblforgotPassword;
+    private Label lblwrongPassword;
 
     @FXML
     protected void handleSignIn() {
@@ -42,7 +42,7 @@ public class SignInController {
                 e.printStackTrace();
             }
         } else {
-            lblforgotPassword.setText("Invalid credentials. Please try again.");
+            lblwrongPassword.setText("Invalid credentials. Please try again.");
         }
     }
 
