@@ -9,22 +9,13 @@ import javafx.scene.Scene;
 
 import java.io.IOException;
 
-public class SignUpController {
-
-    @FXML
-    private TextField tfFirstName;
-
-    @FXML
-    private TextField tfLastName;
+public class ForgotPasswordController {
 
     @FXML
     private TextField tfEmail;
 
     @FXML
-    private TextField tfPassword;
-
-    @FXML
-    private Button Buttonsignup;
+    private Button ButtonEnterEmail;
 
 
     @FXML
@@ -36,7 +27,7 @@ public class SignUpController {
 
 
         try {
-            Stage stage = (Stage) Buttonsignup.getScene().getWindow();
+            Stage stage = (Stage) ButtonEnterEmail.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sign_in_page.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
             stage.setScene(scene);
@@ -46,13 +37,13 @@ public class SignUpController {
     }
 
     @FXML
-    protected void handleSignUp() {
+    protected void handleEnterEmail() {
 
-        System.out.println("User signed up successfully!");
+        System.out.println("Email is Correct");
 
         // After signing up, navigate back to the sign-in page
         try {
-            Stage stage = (Stage) Buttonsignup.getScene().getWindow();
+            Stage stage = (Stage) ButtonEnterEmail.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sign_in_page.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
             stage.setScene(scene);

@@ -32,6 +32,9 @@ public class GrannyGainsHomeController {
     private Button fitnessButton;
 
     @FXML
+    private Button logOutButton;
+
+    @FXML
     private Button mealsButton;
 
     // Initialize method to set up initial states
@@ -56,6 +59,20 @@ public class GrannyGainsHomeController {
             Stage stage = (Stage) mealsButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Meals_Page.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void handleBackToSignIn() {
+
+
+        try {
+            Stage stage = (Stage) logOutButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sign_in_page.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();

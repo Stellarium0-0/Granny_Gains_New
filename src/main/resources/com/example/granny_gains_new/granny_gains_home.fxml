@@ -12,7 +12,9 @@
 <VBox alignment="TOP_CENTER" prefHeight="616.0" prefWidth="1200" spacing="20.0" style="-fx-padding: 20; -fx-background-color: F5F5DC;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.GrannyGainsHomeController">
 
     <!-- Top Navigation Bar -->
-    <HBox alignment="CENTER_RIGHT" prefHeight="99.0" prefWidth="1160.0" spacing="40.0" style="-fx-padding: 20px;" styleClass="linear-gradmain" stylesheets="@styles.css">
+    <HBox alignment="CENTER" prefHeight="99.0" prefWidth="1160.0" spacing="40.0" style="-fx-padding: 20px;" styleClass="linear-gradmain" stylesheets="@styles.css">
+        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="SETTINGS" />
+        <VBox prefHeight="200.0" prefWidth="200.0" />
       <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-title" text="Granny Gains">
          <font>
             <Font size="24.0" />
@@ -24,7 +26,7 @@
             <Font name="Bell MT Bold" size="14.0" />
          </font></Button>
         <Button fx:id="fitnessButton" onAction="#handleFitnessLog" style="-fx-text-fill: black; -fx-background-color: F5F5DC;" styleClass="button" text="Fitness" />
-        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="SETTINGS" />
+        <Button fx:id="logOutButton" onAction="#handleBackToSignIn" style="-fx-text-fill: black; -fx-background-color: F5F5DC;" styleClass="button" text="Log Out" />
     </HBox>
 
     <!-- Main Title and Image -->

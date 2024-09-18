@@ -36,7 +36,7 @@ public class SignInController {
                 // Load the Granny Gains home page
                 Stage stage = (Stage) ButtonSignin.getScene().getWindow();
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("granny_gains_home.fxml"));
-                Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+                Scene scene = new Scene(fxmlLoader.load(), 1200, 1000);
                 stage.setScene(scene);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -52,6 +52,20 @@ public class SignInController {
 
             Stage stage = (Stage) ButtonSignin.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("sign_up_page.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void handleForgotPassword() {
+
+        try {
+
+            Stage stage = (Stage) ButtonSignin.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("forgot_password_page.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
             stage.setScene(scene);
         } catch (IOException e) {

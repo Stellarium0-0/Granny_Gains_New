@@ -44,12 +44,12 @@
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="lblforgotPassword" layoutX="112.0" layoutY="414.0" text="Forgot Password?">
+                        <Label layoutX="112.0" layoutY="414.0" text="Forgot Password?">
                             <font>
                                 <Font size="14.0" />
                             </font>
                         </Label>
-                        <Hyperlink layoutX="222.0" layoutY="411.4" text="Click here" onAction="#handleSignIn" >
+                        <Hyperlink layoutX="222.0" layoutY="411.4" text="Click here" onAction="#handleForgotPassword" >
                             <font>
                                 <Font size="14.0" />
                             </font>

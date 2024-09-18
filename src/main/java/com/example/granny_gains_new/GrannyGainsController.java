@@ -69,7 +69,7 @@ public class GrannyGainsController {
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
 
             // Set the new scene to the stage
-            stage.setScene(new Scene(homeRoot));
+            stage.setScene(new Scene(homeRoot, 1200, 650));
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
