@@ -35,6 +35,9 @@ public class GrannyGainsHomeController {
     private Button SettingsButton;
 
     @FXML
+    private Button FriendsButton;
+
+    @FXML
     private Button mealsButton;
 
     // Initialize method to set up initial states
@@ -77,6 +80,18 @@ public class GrannyGainsHomeController {
         try {
             Stage stage = (Stage) mealsButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/settings_page.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
+            stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleFriends() {
+        try {
+            Stage stage = (Stage) FriendsButton.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/friends_page.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 800);
             stage.setScene(scene);
         } catch (IOException e) {
