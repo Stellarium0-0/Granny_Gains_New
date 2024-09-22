@@ -131,6 +131,7 @@ public class SignUpControllerTest {
         }
     }
 
+    //This tests a successful user sign up
     @Test
     void testSuccessfulUserSignUp() throws SQLException {
         // Arrange: Create a valid user
