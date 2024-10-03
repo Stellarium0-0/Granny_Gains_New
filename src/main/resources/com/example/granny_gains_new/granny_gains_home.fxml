@@ -17,13 +17,14 @@
         <Button fx:id="mealsButton" onAction="#handleMeals" style="-fx-text-fill: black; -fx-background-color: F5F5DC;" styleClass="label-title" stylesheets="@styles.css" text="Meals">
             <font>
                 <Font name="Bell MT Bold" size="14.0" />
-            </font></Button>
+            </font>
+        </Button>
         <VBox prefHeight="200.0" prefWidth="50.0" />
-      <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-title" text="Granny Gains">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
+        <Text fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label-title" text="Granny Gains">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Text>
         <VBox prefHeight="200.0" prefWidth="50.0" />
         <Button fx:id="fitnessButton" onAction="#handleFitness" style="-fx-text-fill: black; -fx-background-color: F5F5DC;" styleClass="button" text="Fitness" />
         <Button fx:id="logOutButton" onAction="#handleBackToSignIn" style="-fx-text-fill: black; -fx-background-color: F5F5DC;" styleClass="button" text="Log Out" />
@@ -44,11 +45,16 @@
         <Label style="-fx-font-size: 26px; -fx-font-family: 'Arial Black';" text="About" />
         <Label style="-fx-font-size: 20px; -fx-font-family: 'Arial';" text="Granny Gains" />
         <Label style="-fx-font-size: 14px; -fx-padding: 0 50px;" text="Helping you stay fit and healthy at any age." wrapText="true" />
-      <styleClass>
-         <String fx:value="linear-grad2" />
-         <String fx:value="linear-gradmain" />
-      </styleClass>
+        <styleClass>
+            <String fx:value="linear-grad2" />
+            <String fx:value="linear-gradmain" />
+        </styleClass>
     </VBox>
-   <Button fx:id="FriendsButton" onAction="#handleFriends" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: black; -fx-background-color: B3EBF2;" styleClass="button" text="Friends" />
+
+    <!-- Friends and Favourites Buttons -->
+    <HBox spacing="20.0" alignment="CENTER">
+        <Button fx:id="favouritesButton" onAction="#handleFavouritesButtonClick" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: black; -fx-background-color: B3EBF2;" styleClass="button" text="Favourites" />
+        <Button fx:id="FriendsButton" onAction="#handleFriends" prefHeight="43.0" prefWidth="159.0" style="-fx-text-fill: black; -fx-background-color: B3EBF2;" styleClass="button" text="Friends" />
+    </HBox>
 
 </VBox>

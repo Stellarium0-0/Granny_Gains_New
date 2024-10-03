@@ -11,6 +11,8 @@ module com.example.granny_gains_new {
     requires javafx.web;
 
     requires com.opencsv;
+    requires com.fasterxml.jackson.databind;
+    requires java.desktop;
 
 
     opens com.example.granny_gains_new to javafx.fxml;

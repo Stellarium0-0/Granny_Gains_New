@@ -1,9 +1,15 @@
 package com.example.granny_gains_new.database;
 
+import com.example.granny_gains_new.model.Recipe;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class is responsible for managing the database connection using the Singleton pattern.
@@ -84,7 +90,8 @@ public class DatabaseConnection {
                     " description TEXT, " +
                     " ingredients TEXT, " +
                     " recipe_method TEXT, " +
-                    " picture_url TEXT " +
+                    " picture_url TEXT, " +
+                    " is_favourited BOOLEAN DEFAULT 0 " + // Add this line
                     "); " +
                     // Meal Plan Recipe Table
                     "CREATE TABLE IF NOT EXISTS Meal_plan_recipe (" +
@@ -99,7 +106,16 @@ public class DatabaseConnection {
                     " user_id INTEGER, " +
                     " login_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, " +
                     " FOREIGN KEY (user_id) REFERENCES User(email) " +
+                    "); " +
+                    // Favorites Table
+                    "CREATE TABLE IF NOT EXISTS Favorites (" +
+                    " user_id TEXT, " +
+                    " recipe_id INTEGER, " +
+                    " PRIMARY KEY (user_id, recipe_id), " +
+                    " FOREIGN KEY (user_id) REFERENCES User(email), " +
+                    " FOREIGN KEY (recipe_id) REFERENCES Recipe(recipe_id) " +
                     "); ";
+
 
     // Private constructor to prevent instantiation
     private DatabaseConnection() {}
@@ -142,6 +158,81 @@ public class DatabaseConnection {
     }
 
     /**
+     * Adds a recipe to the favorites for a user.
+     *
+     * @param userId    The user's email.
+     * @param recipeId  The ID of the recipe to be added to favorites.
+     */
+    public void addFavorite(String userId, int recipeId) {
+        String sql = "INSERT INTO Favorites (user_id, recipe_id) VALUES (?, ?)";
+        try (PreparedStatement pstmt = instance.prepareStatement(sql)) {
+            pstmt.setString(1, userId);
+            pstmt.setInt(2, recipeId);
+            pstmt.executeUpdate();
+            System.out.println("Recipe added to favorites.");
+        } catch (SQLException e) {
+            System.err.println("Failed to add favorite: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Removes a recipe from the favorites for a user.
+     *
+     * @param userId    The user's email.
+     * @param recipeId  The ID of the recipe to be removed from favorites.
+     */
+    public void removeFavorite(String userId, int recipeId) {
+        String sql = "DELETE FROM Favorites WHERE user_id = ? AND recipe_id = ?";
+        try (PreparedStatement pstmt = instance.prepareStatement(sql)) {
+            pstmt.setString(1, userId);
+            pstmt.setInt(2, recipeId);
+            pstmt.executeUpdate();
+            System.out.println("Recipe removed from favorites.");
+        } catch (SQLException e) {
+            System.err.println("Failed to remove favorite: " + e.getMessage());
+        }
+    }
+
+    public List<Recipe> getFavorites(String userId) {
+        List<Recipe> favoriteRecipes = new ArrayList<>();
+        String sql = "SELECT r.* FROM Recipe r INNER JOIN Favorites f ON r.recipe_id = f.recipe_id WHERE f.user_id = ? AND f.is_favorited = 1";
+        try (PreparedStatement pstmt = instance.prepareStatement(sql)) {
+            pstmt.setString(1, userId);
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                int recipeId = rs.getInt("recipe_id");
+                String recipeName = rs.getString("recipe_name");
+                // Retrieve other fields as needed
+
+                Recipe recipe = new Recipe(recipeId, recipeName);
+                // Set other fields of the recipe object
+
+                favoriteRecipes.add(recipe);
+            }
+        } catch (SQLException e) {
+            System.err.println("Failed to retrieve favorites: " + e.getMessage());
+        }
+        return favoriteRecipes;
+    }
+
+
+    public void toggleFavorite(String userId, int recipeId, boolean isFavorited) {
+        String sql = "INSERT INTO Favorites (user_id, recipe_id, is_favorited) VALUES (?, ?, ?) " +
+                "ON CONFLICT(user_id, recipe_id) DO UPDATE SET is_favorited = ?";
+        try (PreparedStatement pstmt = instance.prepareStatement(sql)) {
+            pstmt.setString(1, userId);
+            pstmt.setInt(2, recipeId);
+            pstmt.setInt(3, isFavorited ? 1 : 0); // Convert boolean to int
+            pstmt.setInt(4, isFavorited ? 1 : 0);
+            pstmt.executeUpdate();
+            System.out.println("Favorite status updated.");
+        } catch (SQLException e) {
+            System.err.println("Failed to toggle favorite: " + e.getMessage());
+        }
+    }
+
+
+    /**
      * This method closes the database connection.
      * It should be called when the application is shutting down to release the database resources.
      */
@@ -155,6 +246,14 @@ public class DatabaseConnection {
             } catch (SQLException e) {
                 System.err.println("Error closing the database connection: " + e.getMessage());
             }
+        }
+    }
+
+    public class FavouritesConnection {
+        private static final String URL = "jdbc:sqlite:favourites.db"; // Database file location
+
+        public static Connection getConnection() throws SQLException {
+            return DriverManager.getConnection(URL);
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.granny_gains_new.controller;
 
+import com.example.granny_gains_new.model.FavouritedItem;
 import com.example.granny_gains_new.model.Recipe;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -26,7 +27,7 @@ public class RecipeDetailController {
     public void setRecipeData(Recipe recipe) {
         recipeNameLabel.setText(recipe.getRecipeName());
 
-        // Load the corresponding image for the recipe
+        // Load the image associated with the recipe (make sure the image URL is valid)
         Image recipeImage = new Image(getClass().getResourceAsStream("/com/example/granny_gains_new/meals_images/" + recipe.getPictureUrl() + ".png"));
         recipeImageView.setImage(recipeImage);
 
@@ -39,6 +40,10 @@ public class RecipeDetailController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/meals_page.fxml"));
         Scene scene = new Scene(loader.load(), 1000, 800);
         stage.setScene(scene);
+    }
+
+    public void setRecipeDetails(FavouritedItem selectedItem) {
+
     }
 }
 

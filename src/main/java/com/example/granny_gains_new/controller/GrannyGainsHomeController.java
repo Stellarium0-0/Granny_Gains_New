@@ -5,6 +5,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -121,6 +123,23 @@ public class GrannyGainsHomeController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/sign_in_page.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
             stage.setScene(scene);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private Button favouritesButton; // Define the button that will open the favourites page
+
+    @FXML
+    private void handleFavouritesButtonClick() {
+        try {
+            VBox favouritesPage = FXMLLoader.load(getClass().getResource("/com/example/granny_gains_new/Favourites_Page.fxml"));
+            Scene scene = new Scene(favouritesPage);
+
+            Stage stage = (Stage) favouritesButton.getScene().getWindow(); // Use favouritesButton
+            stage.setScene(scene);
+            stage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -3,17 +3,18 @@ package com.example.granny_gains_new.model;
 import java.util.List;
 
 public class Recipe {
-    private int recipeId;            // Primary key (auto-increment)
-    private String recipeType;       // e.g., Breakfast, Lunch, Dinner, Snack
-    private String recipeName;       // Name of the recipe
-    private int servings;            // Number of servings
-    private int calories;            // Calories per serving
-    private String description;      // Description of the recipe
-    private List<String> ingredients;  // Ingredients list
-    private List<String> recipeMethod; // Cooking/preparation method
-    private String pictureUrl;       // URL to the recipe image
+    private int recipeId;
+    private String recipeType;
+    private String recipeName;
+    private int servings;
+    private int calories;
+    private String description;
+    private List<String> ingredients; // List of ingredients
+    private List<String> recipeMethod; // List of steps in the recipe
+    private String pictureUrl;
+    private boolean isFavourited; // Flag indicating if it's a favorite recipe
 
-    // Constructor
+    // Constructor for retrieving an existing recipe (with ID)
     public Recipe(int recipeId, String recipeType, String recipeName, int servings, int calories,
                   String description, List<String> ingredients, List<String> recipeMethod, String pictureUrl) {
         this.recipeId = recipeId;
@@ -25,9 +26,14 @@ public class Recipe {
         this.ingredients = ingredients;
         this.recipeMethod = recipeMethod;
         this.pictureUrl = pictureUrl;
+        this.isFavourited = isFavourited; // Initialize this field
     }
 
-    // Getters and Setters
+    public Recipe(int recipeId, String recipeName) {
+
+    }
+
+    // Getters and setters for each field
     public int getRecipeId() {
         return recipeId;
     }
@@ -100,18 +106,11 @@ public class Recipe {
         this.pictureUrl = pictureUrl;
     }
 
-    @Override
-    public String toString() {
-        return "Recipe{" +
-                "recipeId=" + recipeId +
-                ", recipeType='" + recipeType + '\'' +
-                ", recipeName='" + recipeName + '\'' +
-                ", servings=" + servings +
-                ", calories=" + calories +
-                ", description='" + description + '\'' +
-                ", ingredients=" + ingredients +
-                ", recipeMethod=" + recipeMethod +
-                ", pictureUrl='" + pictureUrl + '\'' +
-                '}';
+    public boolean isFavourited() { // Getter method
+        return isFavourited;
+    }
+
+    public void setFavourited(boolean favourited) { // Setter method
+        isFavourited = favourited;
     }
 }
