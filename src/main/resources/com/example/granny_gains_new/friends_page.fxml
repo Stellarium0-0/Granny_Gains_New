@@ -11,8 +11,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.TextFlow?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 <AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.FriendsController">
     <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: #FFF;">
@@ -24,7 +24,7 @@
                     </font>
                 </Label>
 
-                <Button layoutX="364.0" layoutY="554.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5; -fx-border-color: #818589;" stylesheets="@styles.css" text="Add a Friend"> </Button>
+                <Button fx:id="AddFriendButton" layoutX="364.0" layoutY="554.0" mnemonicParsing="false" onAction="#handleToAddFriend" prefHeight="44.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5; -fx-border-color: #818589;" stylesheets="@styles.css" text="Add a Friend"> </Button>
 
 
                 <Button fx:id="BackButton" layoutX="119.0" layoutY="579.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #D1FF98; -fx-border-color: #818589;" text="Back" />
@@ -40,15 +40,15 @@
                     <!-- Friends Information -->
                     <VBox>
                         <TextFlow>
-                            <Text text="Phone: " style="-fx-font-weight: bold;" />
+                            <Text style="-fx-font-weight: bold;" text="Phone: " />
                             <Text text="0449 152 209" />
                         </TextFlow>
                         <TextFlow>
-                            <Text text="Age: " style="-fx-font-weight: bold;" />
+                            <Text style="-fx-font-weight: bold;" text="Age: " />
                             <Text text="74 years old" />
                         </TextFlow>
                         <TextFlow>
-                            <Text text="Likes: " style="-fx-font-weight: bold;" />
+                            <Text style="-fx-font-weight: bold;" text="Likes: " />
                             <Text text="walking" />
                         </TextFlow>
                     </VBox>
@@ -64,15 +64,15 @@
                         <VBox>
                             <children>
                                 <TextFlow>
-                                    <Text text="Phone: " style="-fx-font-weight: bold;" />
+                                    <Text style="-fx-font-weight: bold;" text="Phone: " />
                                     <Text text="0492 750 597" />
                                 </TextFlow>
                                 <TextFlow>
-                                    <Text text="Age: " style="-fx-font-weight: bold;" />
+                                    <Text style="-fx-font-weight: bold;" text="Age: " />
                                     <Text text="63 years old" />
                                 </TextFlow>
                                 <TextFlow>
-                                    <Text text="Likes: " style="-fx-font-weight: bold;" />
+                                    <Text style="-fx-font-weight: bold;" text="Likes: " />
                                     <Text text="weightlifting" />
                                 </TextFlow>
                             </children>
@@ -87,15 +87,15 @@
                         <VBox>
                             <children>
                                 <TextFlow>
-                                    <Text text="Phone: " style="-fx-font-weight: bold;" />
+                                    <Text style="-fx-font-weight: bold;" text="Phone: " />
                                     <Text text="0491 634 662" />
                                 </TextFlow>
                                 <TextFlow>
-                                    <Text text="Age: " style="-fx-font-weight: bold;" />
+                                    <Text style="-fx-font-weight: bold;" text="Age: " />
                                     <Text text="78 years old" />
                                 </TextFlow>
                                 <TextFlow>
-                                    <Text text="Likes: " style="-fx-font-weight: bold;" />
+                                    <Text style="-fx-font-weight: bold;" text="Likes: " />
                                     <Text text="swimming" />
                                 </TextFlow>
                             </children>
