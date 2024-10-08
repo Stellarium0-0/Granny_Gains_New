@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.MealsController">
+<AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.MealsController">
     <children>
-        <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: #FFF;">
+        <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: F5F5DC;">
             <left>
-                <Pane prefHeight="669.0" prefWidth="248.0" styleClass="linear-grad" BorderPane.alignment="CENTER">
+                <Pane prefHeight="669.0" prefWidth="248.0" styleClass="linear-gradmain" stylesheets="@styles.css" BorderPane.alignment="CENTER">
                     <children>
                         <Button fx:id="HomeButton" layoutX="65.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="49.0" prefWidth="118.0" style="-fx-background-color: #1e81b0; -fx-text-fill: white;" text="HOME">
                             <font>
@@ -23,7 +26,7 @@
                 </Pane>
             </left>
             <center>
-                <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: #f2f2f2;" BorderPane.alignment="CENTER">
+                <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: F5F5DC;" BorderPane.alignment="CENTER">
                     <children>
                         <ListView fx:id="recipeListView" layoutX="50.0" layoutY="50.0" prefHeight="550.0" prefWidth="532.0" style="-fx-background-color: #f0f0f0; -fx-padding: 10px; -fx-font-size: 16px;" />
                     </children>

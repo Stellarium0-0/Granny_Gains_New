@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.FitnessController">
+<AnchorPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: F5F5DC;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.FitnessController">
     <children>
-        <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: #FFF;">
+        <BorderPane prefHeight="669.0" prefWidth="1098.0">
             <left>
-                <Pane prefHeight="669.0" prefWidth="248.0" styleClass="linear-grad" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+                <Pane prefHeight="669.0" prefWidth="248.0" styleClass="linear-gradmain" stylesheets="@styles.css" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="HIITButton" layoutX="56.0" layoutY="493.0" mnemonicParsing="false" onAction="#NavHIIT" prefHeight="66.0" prefWidth="137.0" stylesheets="@styles.css" text="HIIT" />
                   <Button fx:id="HomeButton" layoutX="65.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="49.0" prefWidth="118.0" style="-fx-background-color: #1e81b0;" stylesheets="@styles.css" text="HOME">
@@ -25,7 +25,7 @@
                </children></Pane>
             </left>
             <center>
-                <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: #f2f2f2;" BorderPane.alignment="CENTER">
+                <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: F5F5DC;" BorderPane.alignment="CENTER">
                     <children>
                   <ImageView fx:id="Cardio1" fitHeight="171.0" fitWidth="310.0" layoutX="50.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="Cardio2" fitHeight="171.0" fitWidth="310.0" layoutX="472.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true" />

@@ -11,6 +11,9 @@ import java.io.IOException;
 public class HelpController {
 
     @FXML
+    private Button backHome;
+
+    @FXML
     private Button BackButton;
 
     @FXML

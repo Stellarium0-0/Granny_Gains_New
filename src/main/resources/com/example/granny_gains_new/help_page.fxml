@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.HelpController">
+<AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.HelpController">
     <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: #FFF;">
         <center>
             <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: F5F5DC;" BorderPane.alignment="CENTER">
@@ -20,26 +20,26 @@
 
                 <!--Navigating the app Guide-->
 
-                <Button layoutX="345.0" layoutY="216.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5; -fx-border-color: #818589;" stylesheets="@styles.css" text="Navigating the App"> </Button>
+                <Button layoutX="345.0" layoutY="216.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5;" stylesheets="@styles.css" text="Navigating the App"> </Button>
 
                 <!--Text Size Dropdown-->
 
-                <Button layoutX="345.0" layoutY="308.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5; -fx-border-color: #818589;" stylesheets="@styles.css" text="TextSize"> </Button>
+                <Button layoutX="345.0" layoutY="308.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5;" stylesheets="@styles.css" text="TextSize"> </Button>
 
                 <!--Add/Edit Dropdown-->
 
-                <Button layoutX="345.0" layoutY="410.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5; -fx-border-color: #818589;" stylesheets="@styles.css" text="Add/Edit Programs"> </Button>
+                <Button layoutX="345.0" layoutY="410.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5;" stylesheets="@styles.css" text="Add/Edit Programs"> </Button>
 
                 <!--Home Button-->
 
-                <Button layoutX="345.0" layoutY="517.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="337.0" style="-fx-background-color: ADD8E6; -fx-text-fill: #000000; -fx-background-radius: 5; -fx-border-color: #C2B280;" stylesheets="@styles.css" text="Home Page">
+                <Button fx:id="backHome" layoutX="345.0" layoutY="517.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="53.0" prefWidth="337.0" style="-fx-background-color: #1e81b0; -fx-text-fill: #000000; -fx-background-radius: 5;" stylesheets="@styles.css" text="Home Page">
 
 
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button fx:id="BackButton" layoutX="104.0" layoutY="570.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="33.0" prefWidth="87.0" style="-fx-background-color: #D1FF98; -fx-border-color: #818589;" text="Back" />
+                <Button fx:id="BackButton" layoutX="104.0" layoutY="570.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="33.0" prefWidth="87.0" style="-fx-background-color: #D1FF98;" text="Back" />
             <Label layoutX="589.0" layoutY="77.0" text="?">
                <font>
                   <Font size="53.0" />

@@ -9,17 +9,17 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.SignUpController">
+<AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.SignUpController">
     <children>
-        <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: #FFF;">
+        <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: F5F5DC;">
             <left>
-                <Pane prefHeight="669.0" prefWidth="549.0" styleClass="linear-grad" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+                <Pane prefHeight="669.0" prefWidth="549.0" styleClass="linear-gradmain" stylesheets="@styles.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="BackToSignIn" onAction="#handleBackToSignIn" layoutX="56.0" layoutY="574.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="114.0" text="Back" />
+                  <Button fx:id="BackToSignIn" layoutX="56.0" layoutY="574.0" mnemonicParsing="false" onAction="#handleBackToSignIn" prefHeight="61.0" prefWidth="114.0" text="Back" />
                </children></Pane>
             </left>
             <center>
-                <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: #f2f2f2;" BorderPane.alignment="CENTER">
+                <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: F5F5DC;" BorderPane.alignment="CENTER">
                     <children>
                         <TextField fx:id="tfFirstName" layoutX="106.0" layoutY="132.0" prefHeight="62.0" prefWidth="337.0" promptText="First Name">
                             <font>
@@ -41,7 +41,7 @@
                                 <Font size="17.0" />
                             </font>
                         </PasswordField>
-                        <Label fx:id="lblincorrectdetails" layoutX="106.0" layoutY="480.0" text=" " style="-fx-text-fill: red;">
+                        <Label fx:id="lblincorrectdetails" layoutX="106.0" layoutY="480.0" style="-fx-text-fill: red;" text=" ">
                             <font>
                                 <Font size="14.0" />
                             </font>

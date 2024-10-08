@@ -9,11 +9,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.FitnessHelpController">
+<AnchorPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: F5F5DC;" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.FitnessHelpController">
     <children>
         <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: #FFF;">
             <left>
-                <Pane prefHeight="669.0" prefWidth="185.0" styleClass="linear-grad" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+                <Pane prefHeight="669.0" prefWidth="185.0" styleClass="linear-gradmain" stylesheets="@styles.css" BorderPane.alignment="CENTER">
                     <children>
                         <Button fx:id="HomeButton" layoutX="24.0" layoutY="580.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="59.0" prefWidth="138.0" style="-fx-background-color: #1e81b0;" stylesheets="@styles.css" text="Back">
                             <font>
@@ -23,7 +23,7 @@
                     </children></Pane>
             </left>
             <center>
-                <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: #f2f2f2;" BorderPane.alignment="CENTER">
+                <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: F5F5DC;" BorderPane.alignment="CENTER">
                     <children>
                   <Label layoutX="17.0" layoutY="14.0" text="Cardio">
                      <font>
