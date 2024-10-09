@@ -8,33 +8,49 @@ import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
 import javafx.scene.Parent;
 
-
-
-
+/**
+ * Controller class for handling the Fitness section in Granny Gains.
+ * <p>
+ * This class provides navigation between various fitness sections (Cardio, Strength, HIIT),
+ * loads workout data from CSV files, and displays them in the Cardio section.
+ * </p>
+ */
 public class FitnessController {
 
     @FXML
     private Button HomeButton;
-
     @FXML
     private Button CardioButton;
-
     @FXML
     private Button StrengthButton;
-
     @FXML
     private Button HIITButton;
-
     @FXML
     private Button HelpButton;
 
+    @FXML
+    private ImageView Cardio1, Cardio2, Cardio3, Cardio4;
+    @FXML
+    private Label Cardio1Title, Cardio2Title, Cardio3Title, Cardio4Title;
+
+    /**
+     * Initializes the controller by loading cardio workout data from a CSV file.
+     */
+    @FXML
+    public void initialize() {
+        loadCardioWorkouts();
+    }
+
+    /**
+     * Navigates to the Fitness Help view.
+     *
+     * @throws IOException if the FXML file for the help view is not found.
+     */
     @FXML
     protected void handleHelp() throws IOException {
         Stage stage = (Stage) HelpButton.getScene().getWindow();
@@ -43,6 +59,11 @@ public class FitnessController {
         stage.setScene(scene);
     }
 
+    /**
+     * Navigates to the Cardio workout view.
+     *
+     * @throws IOException if the FXML file for the Cardio view is not found.
+     */
     @FXML
     protected void NavCardio() throws IOException {
         Stage stage = (Stage) CardioButton.getScene().getWindow();
@@ -51,6 +72,11 @@ public class FitnessController {
         stage.setScene(scene);
     }
 
+    /**
+     * Navigates to the Strength workout view.
+     *
+     * @throws IOException if the FXML file for the Strength view is not found.
+     */
     @FXML
     protected void NavStrength() throws IOException {
         Stage stage = (Stage) StrengthButton.getScene().getWindow();
@@ -59,6 +85,11 @@ public class FitnessController {
         stage.setScene(scene);
     }
 
+    /**
+     * Navigates to the HIIT workout view.
+     *
+     * @throws IOException if the FXML file for the HIIT view is not found.
+     */
     @FXML
     protected void NavHIIT() throws IOException {
         Stage stage = (Stage) HIITButton.getScene().getWindow();
@@ -67,6 +98,11 @@ public class FitnessController {
         stage.setScene(scene);
     }
 
+    /**
+     * Navigates back to the Home view.
+     *
+     * @throws IOException if the FXML file for the Home view is not found.
+     */
     @FXML
     protected void handleBackToHome() throws IOException {
         Stage stage = (Stage) HomeButton.getScene().getWindow();
@@ -74,19 +110,11 @@ public class FitnessController {
         Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
         stage.setScene(scene);
     }
-    @FXML
-    private ImageView Cardio1, Cardio2, Cardio3, Cardio4;
 
-    @FXML
-    private Label Cardio1Title, Cardio2Title, Cardio3Title, Cardio4Title;
-
-    // Method to initialize the controller
-    @FXML
-    public void initialize() {
-        loadCardioWorkouts();
-    }
-
-    // Method to load cardio workouts from CSV and update the UI
+    /**
+     * Loads cardio workout data from a CSV file and updates the corresponding UI elements.
+     * Reads from the file "fitness.csv" and displays the workouts in designated ImageView and Label components.
+     */
     private void loadCardioWorkouts() {
         String csvFile = "src/main/java/com/example/granny_gains_new/database/fitness.csv";
         String line;
@@ -95,20 +123,16 @@ public class FitnessController {
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
             int counter = 1;
             while ((line = br.readLine()) != null) {
-                // Skip the header row
                 if (counter == 1) {
                     counter++;
                     continue;
                 }
 
-                // Split the line into columns
                 String[] workoutData = line.split(csvSplitBy);
-
                 String title = workoutData[0].replace("\"", "").trim();
                 String thumbnailPath = workoutData[1].replace("\"", "").trim();
                 String videoLink = workoutData[2].replace("\"", "").trim();
 
-                // Assign the title, thumbnail, and video link to the correct ImageView and Label based on the counter
                 switch (counter) {
                     case 2:
                         updateWorkoutTile(Cardio1, Cardio1Title, title, thumbnailPath, videoLink);
@@ -131,9 +155,16 @@ public class FitnessController {
         }
     }
 
-    // Method to update the ImageView and Label for a workout tile in FitnessCardio.fxml
+    /**
+     * Updates a specified ImageView and Label with workout information and assigns an event handler for video playback.
+     *
+     * @param imageView the ImageView component to display the workout thumbnail.
+     * @param titleLabel the Label component to display the workout title.
+     * @param title the workout title to set in the Label.
+     * @param imagePath the path to the workout thumbnail image.
+     * @param videoLink the URL link to the workout video.
+     */
     private void updateWorkoutTile(ImageView imageView, Label titleLabel, String title, String imagePath, String videoLink) {
-        // Load and set the image in the ImageView
         try {
             Image thumbnail = new Image(getClass().getResource(imagePath).toExternalForm());
             imageView.setImage(thumbnail);
@@ -141,24 +172,24 @@ public class FitnessController {
             System.err.println("Error loading image: " + e.getMessage());
         }
 
-        // Set the title in the Label
         titleLabel.setText(title);
 
-        // Add event handler to open video on click
         imageView.setOnMouseClicked(event -> openVideoPlayer(videoLink));
-        titleLabel.setOnMouseClicked(event -> openVideoPlayer(videoLink));  // You can also click the title
+        titleLabel.setOnMouseClicked(event -> openVideoPlayer(videoLink));
     }
 
-    // Method to open a new scene with the video player
+    /**
+     * Opens a new scene with a video player to play the specified workout video.
+     *
+     * @param videoUrl the URL of the workout video to play.
+     */
     private void openVideoPlayer(String videoUrl) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/fitness_player.fxml"));
             Parent root = loader.load();
 
-            // Get the controller for the new scene
             FitnessVideoPlayerController controller = loader.getController();
             controller.setVideoUrl(videoUrl);
-
 
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
@@ -168,20 +199,4 @@ public class FitnessController {
             e.printStackTrace();
         }
     }
-
-
-/**
- REPLACING DYNAMIC ADJUSTMENTS
-    FXIDS in "src/main/resources/com/example/granny_gains_new/FitnessCardio.fxml"
-
- <--Labels-->
-    Cardio1Title, Cardio2Title, Cardio3Title, Cardio4Title
- </--Labels-->
-
- <--Images (Thumbnail) -->
-    Cardio1, Cardio2, Cardio3, Cardio4
- </--Labels-->
- */
 }
-
-
