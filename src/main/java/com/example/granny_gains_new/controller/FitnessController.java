@@ -200,3 +200,14 @@ public class FitnessController {
         }
     }
 }
+
+/**
+ REPLACING DYNAMIC ADJUSTMENTS
+ FXIDS in "src/main/resources/com/example/granny_gains_new/FitnessCardio.fxml"
+ <--Labels-->
+ Cardio1Title, Cardio2Title, Cardio3Title, Cardio4Title
+ </--Labels-->
+ <--Images (Thumbnail) -->
+ Cardio1, Cardio2, Cardio3, Cardio4
+ </--Labels-->
+ */
