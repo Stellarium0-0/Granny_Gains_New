@@ -13,9 +13,19 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+/**
+ * Controller class for handling BMI calculations and user profiles in Granny Gains.
+ * <p>
+ * This class provides functionality to calculate BMI based on user's height and weight,
+ * and save user profile information to a SQLite database.
+ * </p>
+ */
 public class BMICalculatorController {
 
-    private String email; // Email passed from the sign-up page
+    /**
+     * Email passed from the sign-up page.
+     */
+    private String email;
 
     @FXML
     DatePicker dpDateOfBirth;
@@ -38,18 +48,30 @@ public class BMICalculatorController {
     @FXML
     private Button btnSave;
 
-    // Set the email when loading this controller
+    /**
+     * Sets the email when loading this controller.
+     *
+     * @param email the email to set
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /**
+     * Initializes the controller. Sets event handlers for Calculate and Save buttons.
+     */
     @FXML
     protected void initialize() {
         btnCalculate.setOnAction(event -> calculateBMI());
         btnSave.setOnAction(event -> saveProfile());
     }
 
-    // Method to calculate BMI and display it in the lblBMI label
+    /**
+     * Calculates BMI and displays it in the lblBMI label.
+     * <p>
+     * If the height or weight input is invalid, an error message is displayed.
+     * </p>
+     */
     void calculateBMI() {
         try {
             double height = Double.parseDouble(tfHeight.getText()) / 100; // Convert height from cm to meters
@@ -64,7 +86,12 @@ public class BMICalculatorController {
         }
     }
 
-    // Method to save the user profile to the database and navigate to the home page
+    /**
+     * Saves the user profile to the database and navigates to the home page.
+     * <p>
+     * If the height or weight input is invalid, an error message is displayed.
+     * </p>
+     */
     void saveProfile() {
         try {
             // Get the date of birth from DatePicker
@@ -95,7 +122,16 @@ public class BMICalculatorController {
         }
     }
 
-    // Method to insert the user's profile data into the SQLite database using email
+    /**
+     * Inserts the user's profile data into the SQLite database using the email.
+     *
+     * @param email the user's email
+     * @param dateOfBirth the user's date of birth
+     * @param gender the user's gender
+     * @param height the user's height in cm
+     * @param weight the user's weight in kg
+     * @param bmi the calculated BMI
+     */
     private void insertProfileIntoDatabase(String email, LocalDate dateOfBirth, String gender, double height, double weight, double bmi) {
         // SQL query to insert the data into the User table
         String sql = "UPDATE User SET date_of_birth = ?, gender = ?, height = ?, weight = ?, bmi = ? WHERE email = ?";
@@ -120,4 +156,3 @@ public class BMICalculatorController {
         }
     }
 }
-
