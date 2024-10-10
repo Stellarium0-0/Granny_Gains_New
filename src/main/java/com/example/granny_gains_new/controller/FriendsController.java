@@ -6,7 +6,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.effect.ColorAdjust;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -25,7 +28,6 @@ public class FriendsController {
     @FXML
     private VBox friendsVBox;
 
-    // to home page
     @FXML
     protected void handleBackToHome() throws IOException {
         Stage stage = (Stage) BackButton.getScene().getWindow();
@@ -34,29 +36,43 @@ public class FriendsController {
         stage.setScene(scene);
     }
 
-
-
     @FXML
-    public void initialize() {
-        AddFriendButton.setOnAction(event -> addFriend());
-    }
-
-    // VBOX
-    private void addFriend() {
-        String friendName = AddFriend.getText();
-
-        // Only add if text is not null
-        if (friendName != null && !friendName.trim().isEmpty()) {
-            // Create a pane
+    protected void handleToAddFriend() {
+        String friendName = AddFriend.getText().trim();
+        if (!friendName.isEmpty()) {
             TitledPane newFriendPane = new TitledPane();
             newFriendPane.setText(friendName);
-            newFriendPane.setPrefHeight(26.0);
-            newFriendPane.setPrefWidth(333.0);
-            newFriendPane.setStyle("-fx-background-color: #D1FF98; -fx-border-color: #818589;");
+            newFriendPane.setStyle("-fx-background-color: white; -fx-border-color: #818589;");
 
-            // Add input to box
+            ColorAdjust colorAdjust = new ColorAdjust();
+            colorAdjust.setContrast(1.0);
+            newFriendPane.setEffect(colorAdjust);
+
+            VBox friendDetails = new VBox();
+            friendDetails.setSpacing(5);
+
+            TextFlow phoneFlow = new TextFlow();
+            Text phoneLabel = new Text("Phone: ");
+            phoneLabel.setStyle("-fx-font-weight: bold;");
+            Text phoneNumber = new Text("Not Provided");
+            phoneFlow.getChildren().addAll(phoneLabel, phoneNumber);
+
+            TextFlow ageFlow = new TextFlow();
+            Text ageLabel = new Text("Age: ");
+            ageLabel.setStyle("-fx-font-weight: bold;");
+            Text age = new Text("Not Provided");
+            ageFlow.getChildren().addAll(ageLabel, age);
+
+            TextFlow likesFlow = new TextFlow();
+            Text likesLabel = new Text("Likes: ");
+            likesLabel.setStyle("-fx-font-weight: bold;");
+            Text likes = new Text("Not Provided");
+            likesFlow.getChildren().addAll(likesLabel, likes);
+
+            friendDetails.getChildren().addAll(phoneFlow, ageFlow, likesFlow);
+            newFriendPane.setContent(friendDetails);
+
             friendsVBox.getChildren().add(newFriendPane);
-
             AddFriend.clear();
         }
     }
