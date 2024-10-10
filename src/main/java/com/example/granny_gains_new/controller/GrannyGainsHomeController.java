@@ -82,9 +82,7 @@ public class GrannyGainsHomeController {
     }
 
     @FXML
-    public void handleMeals() {
-        navigateToPage("/com/example/granny_gains_new/Meals_Page.fxml", "Meals Page");
-    }
+    public void handleMeals() { navigateToPage("/com/example/granny_gains_new/Meals_Page.fxml", "Meals Page"); }
 
     @FXML
     public void handleFitness() {
@@ -92,21 +90,19 @@ public class GrannyGainsHomeController {
     }
 
     @FXML
-    public void handleSettings() {
-        navigateToPage("/com/example/granny_gains_new/settings_page.fxml", "Settings Page");
-    }
+    public void handleSettings() { navigateToPage("/com/example/granny_gains_new/settings_page.fxml", "Settings Page"); }
 
     @FXML
-    public void handleFriends() {
-        navigateToPage("/com/example/granny_gains_new/Friends_page.fxml", "Friends Page");
-    }
+    public void handleFriends() { navigateToPage("/com/example/granny_gains_new/Friends_page.fxml", "Friends Page"); }
 
     // Generic method to navigate between pages
     private void navigateToPage(String fxmlFilePath, String pageName) {
         try {
             Stage stage = (Stage) mealsButton.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxmlFilePath));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
+            double width = stage.getWidth();
+            double height = stage.getHeight();
+            Scene scene = new Scene(fxmlLoader.load(), width, height);
             stage.setScene(scene);
             System.out.println("Navigated to " + pageName);
         } catch (IOException e) {
@@ -118,8 +114,10 @@ public class GrannyGainsHomeController {
     protected void handleBackToSignIn() {
         try {
             Stage stage = (Stage) logOutButton.getScene().getWindow();
+            double width = stage.getWidth();
+            double height = stage.getHeight();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/sign_in_page.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
+            Scene scene = new Scene(fxmlLoader.load(), width, height);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();

@@ -17,8 +17,10 @@ public class FitnessHelpController {
     @FXML
     protected void handleBackToHome() throws IOException {
         Stage stage = (Stage) HomeButton.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/FitnessCardio.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
 }

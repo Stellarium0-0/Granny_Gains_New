@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import javafx.scene.control.
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -12,7 +11,7 @@
 <VBox alignment="TOP_CENTER" prefHeight="616.0" prefWidth="1200.0" spacing="20.0" style="-fx-padding: 20; -fx-background-color: F5F5DC;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.GrannyGainsHomeController">
 
     <!-- Top Navigation Bar -->
-    <HBox alignment="CENTER" spacing="40.0" style="-fx-padding: 20px;" styleClass="linear-gradmain" stylesheets="@styles.css">
+    <HBox alignment="CENTER" maxHeight="85.0" spacing="40.0" style="-fx-padding: 20px;" styleClass="linear-gradmain" stylesheets="@styles.css">
         <Button fx:id="SettingsButton" onAction="#handleSettings" style="-fx-text-fill: black; -fx-background-color: #D1FF98;" styleClass="button" text="Settings" />
         <Button fx:id="mealsButton" onAction="#handleMeals" style="-fx-text-fill: black; -fx-background-color: #D1FF98;" styleClass="label-title" stylesheets="@styles.css" text="Meals">
             <font>
@@ -40,14 +39,10 @@
     <Label fx:id="welcomeLabel" layoutX="300.0" layoutY="50.0" style="-fx-font-size: 24;" text="Welcome!" />
 
     <!-- Footer Section -->
-    <VBox alignment="CENTER" spacing="10.0" style="-fx-padding: 50;">
+    <VBox alignment="CENTER" spacing="10.0" style="-fx-padding: 50;" styleClass="linear-gradmain">
         <Label style="-fx-font-size: 26px; -fx-font-family: 'Arial Black';" text="About" />
         <Label style="-fx-font-size: 20px; -fx-font-family: 'Arial';" text="Granny Gains" />
         <Label style="-fx-font-size: 14px; -fx-padding: 0 50px;" text="Helping you stay fit and healthy at any age." wrapText="true" />
-      <styleClass>
-         <String fx:value="linear-grad2" />
-         <String fx:value="linear-gradmain" />
-      </styleClass>
     </VBox>
    <Button fx:id="FriendsButton" onAction="#handleFriends" prefHeight="50.0" prefWidth="150.0" style="-fx-text-fill: black; -fx-background-color: #1e81b0;" styleClass="button" text="Friends" />
 

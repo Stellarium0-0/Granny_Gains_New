@@ -7,70 +7,68 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.SignInController">
-    <children>
-        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <VBox alignment="CENTER">
+<VBox alignment="CENTER" prefHeight="669.0" prefWidth="1100.0" style="-fx-background-color: F5F5DC;" styleClass="linear-gradmain" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.SignInController">
+   <children>
+      <Pane styleClass="linear-gradmain" stylesheets="@styles.css">
          <children>
-                <Pane styleClass="linear-gradmain" stylesheets="@styles.css">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <VBox alignment="CENTER_RIGHT" layoutX="549.0">
+                  <VBox alignment="CENTER_RIGHT" layoutX="272.0" layoutY="3.0" AnchorPane.leftAnchor="550.0" AnchorPane.topAnchor="0.0">
                      <children>
-                            <Pane prefHeight="669.0" prefWidth="550.0" style="-fx-background-color: F5F5DC;">
-                                <children>
-                                    <TextField fx:id="tfEmail" layoutX="112.0" layoutY="210.0" prefHeight="62.0" prefWidth="337.0" promptText="Email">
-                                        <font>
-                                            <Font size="17.0" />
-                                        </font>
-                                    </TextField>
-                                    <PasswordField fx:id="tfPassword" layoutX="112.0" layoutY="290.0" prefHeight="62.0" prefWidth="337.0" promptText="Password">
-                                        <font>
-                                            <Font size="17.0" />
-                                        </font>
-                                    </PasswordField>
-                                    <CheckBox fx:id="rememberMeCheckBox" layoutX="112.0" layoutY="360.0" text="Remember Me" />
-                                    <Button fx:id="ButtonSignin" layoutX="112.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: B3EBF2; -fx-text-fill: black;" stylesheets="@styles.css" text="Sign In">
-                                        <font>
-                                            <Font size="18.0" />
-                                        </font>
-                                    </Button>
-                                    <Button layoutX="112.0" layoutY="566.0" mnemonicParsing="false" onAction="#buttonSignup" prefHeight="50.0" prefWidth="340.0" style="-fx-background-color: B3EBF2; -fx-text-fill: black; -fx-background-radius: 5; -fx-border-color: B3EBF2;" stylesheets="@styles.css" text="Don't have an account? Sign up">
-                                        <font>
-                                            <Font size="18.0" />
-                                        </font>
-                                    </Button>
-                                    <Label fx:id="lblwrongPassword" layoutX="112.0" layoutY="384.0" style="-fx-text-fill: red;" text=" ">
-                                        <font>
-                                            <Font size="14.0" />
-                                        </font>
-                                    </Label>
-                                    <Label layoutX="112.0" layoutY="414.0" text="Forgot Password">
-                                        <font>
-                                            <Font size="14.0" />
-                                        </font>
-                                    </Label>
-                                    <Hyperlink layoutX="222.0" layoutY="411.4" onAction="#handleForgotPassword" text="Click here">
-                                        <font>
-                                            <Font size="14.0" />
-                                        </font>
-                                    </Hyperlink>
-                                    <Label layoutX="112.0" layoutY="157.0" prefHeight="27.0" prefWidth="101.0" text="Sign In">
-                                        <font>
-                                            <Font name="System Bold" size="20.0" />
-                                        </font>
-                                    </Label>
-                                </children>
-                            </Pane>
+                        <Pane prefHeight="670.0" prefWidth="550.0" style="-fx-background-color: F5F5DC;" stylesheets="@styles.css">
+                           <children>
+                              <TextField fx:id="tfEmail" layoutX="112.0" layoutY="210.0" prefHeight="62.0" prefWidth="337.0" promptText="Email">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </TextField>
+                              <PasswordField fx:id="tfPassword" layoutX="112.0" layoutY="290.0" prefHeight="62.0" prefWidth="337.0" promptText="Password">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </PasswordField>
+                              <CheckBox fx:id="rememberMeCheckBox" layoutX="112.0" layoutY="360.0" text="Remember Me" />
+                              <Button fx:id="ButtonSignin" layoutX="112.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: B3EBF2; -fx-text-fill: black;" stylesheets="@styles.css" text="Sign In">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="112.0" layoutY="566.0" mnemonicParsing="false" onAction="#buttonSignup" prefHeight="50.0" prefWidth="340.0" style="-fx-background-color: B3EBF2; -fx-text-fill: black; -fx-background-radius: 5; -fx-border-color: B3EBF2;" stylesheets="@styles.css" text="Don't have an account? Sign up">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="lblwrongPassword" layoutX="112.0" layoutY="384.0" style="-fx-text-fill: red;" text=" ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="112.0" layoutY="414.0" text="Forgot Password">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Hyperlink layoutX="222.0" layoutY="411.4" onAction="#handleForgotPassword" text="Click here">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Hyperlink>
+                              <Label layoutX="112.0" layoutY="157.0" prefHeight="27.0" prefWidth="101.0" text="Sign In">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
                      </children>
                   </VBox>
                </children>
-            </Pane>
+            </AnchorPane>
          </children>
-      </VBox>
-    </children>
-</AnchorPane>
+      </Pane>
+   </children>
+</VBox>

@@ -38,40 +38,50 @@ public class FitnessController {
     @FXML
     protected void handleHelp() throws IOException {
         Stage stage = (Stage) HelpButton.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/fitness_help.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
 
     @FXML
     protected void NavCardio() throws IOException {
         Stage stage = (Stage) CardioButton.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/FitnessCardio.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
 
     @FXML
     protected void NavStrength() throws IOException {
         Stage stage = (Stage) StrengthButton.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/FitnessStrength.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
 
     @FXML
     protected void NavHIIT() throws IOException {
         Stage stage = (Stage) HIITButton.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/FitnessHIIT.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 700);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
 
     @FXML
     protected void handleBackToHome() throws IOException {
         Stage stage = (Stage) HomeButton.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/granny_gains_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
     @FXML

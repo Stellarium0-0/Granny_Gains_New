@@ -67,8 +67,10 @@ public class SignInController {
             createSession(email, sessionId);
             try {
                 Stage stage = (Stage) ButtonSignin.getScene().getWindow();
+                double width = stage.getWidth();
+                double height = stage.getHeight();
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/granny_gains_home.fxml"));
-                Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+                Scene scene = new Scene(fxmlLoader.load(), width, height);
                 stage.setScene(scene);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -122,8 +124,10 @@ public class SignInController {
     protected void buttonSignup() {
         try {
             Stage stage = (Stage) ButtonSignin.getScene().getWindow();
+            double width = stage.getWidth();
+            double height = stage.getHeight();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/sign_up_page.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
+            Scene scene = new Scene(fxmlLoader.load(), width,height);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
@@ -134,8 +138,10 @@ public class SignInController {
     protected void handleForgotPassword() {
         try {
             Stage stage = (Stage) ButtonSignin.getScene().getWindow();
+            double width = stage.getWidth();
+            double height = stage.getHeight();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/forgot_password_page.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
+            Scene scene = new Scene(fxmlLoader.load(), width, height);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();

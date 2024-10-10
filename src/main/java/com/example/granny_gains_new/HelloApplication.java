@@ -16,6 +16,8 @@ public class HelloApplication extends Application {
     public static final int WIDTH = 640;
     public static final int HEIGHT = 360;
 
+
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("granny_gains.fxml"));

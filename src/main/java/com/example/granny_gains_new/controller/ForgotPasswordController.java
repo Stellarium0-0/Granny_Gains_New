@@ -36,8 +36,10 @@ public class ForgotPasswordController {
 
         try {
             Stage stage = (Stage) ButtonEnterEmail.getScene().getWindow();
+            double width = stage.getWidth();
+            double height = stage.getHeight();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/sign_in_page.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
+            Scene scene = new Scene(fxmlLoader.load(), width, height);
             stage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();

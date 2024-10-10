@@ -16,8 +16,10 @@ public class FriendsController {
     @FXML
     protected void handleBackToHome() throws IOException {
         Stage stage = (Stage) BackButton.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/granny_gains_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
 }

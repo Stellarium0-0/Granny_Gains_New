@@ -31,8 +31,10 @@ public class SettingsController {
     @FXML
     protected void handleBackToHome() throws IOException {
         Stage stage = (Stage) backButton.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/granny_gains_home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1000, 1000);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
 
@@ -42,8 +44,10 @@ public class SettingsController {
     @FXML
     protected void handleToHelp() throws IOException {
         Stage stage = (Stage) HelpButton.getScene().getWindow();
+        double width = stage.getWidth();
+        double height = stage.getHeight();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/help_page.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1200, 650);
+        Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
 
