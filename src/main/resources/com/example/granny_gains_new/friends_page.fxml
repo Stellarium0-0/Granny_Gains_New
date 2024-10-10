@@ -13,6 +13,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.control.TextField?>
+
 
 <AnchorPane prefHeight="669.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.FriendsController">
     <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: #FFF;">
@@ -24,8 +26,13 @@
                     </font>
                 </Label>
 
-                <Button fx:id="AddFriendButton" layoutX="364.0" layoutY="554.0" mnemonicParsing="false" onAction="#handleToAddFriend" prefHeight="44.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5; -fx-border-color: #818589;" stylesheets="@styles.css" text="Add a Friend"> </Button>
+                <TextField fx:id="AddFriend" layoutX="366.0" layoutY="505.0" prefHeight="2.0" prefWidth="337.0" promptText="Enter friends name">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </TextField>
 
+                <Button fx:id="AddFriendButton" layoutX="364.0" layoutY="564.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="337.0" style="-fx-background-color: #D1FF98; -fx-text-fill: #000000; -fx-background-radius: 5; -fx-border-color: #818589;" text="Add a Friend"> </Button>
 
                 <Button fx:id="BackButton" layoutX="119.0" layoutY="579.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="39.0" prefWidth="95.0" style="-fx-background-color: #D1FF98; -fx-border-color: #818589;" text="Back" />
                 <Circle layoutX="594.0" layoutY="66.0" radius="17.0" stroke="BLACK" strokeType="INSIDE" />
@@ -34,79 +41,72 @@
                 <Circle layoutX="642.0" layoutY="73.0" radius="24.0" stroke="BLACK" strokeType="INSIDE" />
 
 
-                <!-- Drop Down Button -->
-                <TitledPane expanded="false" focusTraversable="false" layoutX="366.0" layoutY="150.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="333.0" style="-fx-background-color: #D1FF98; -fx-border-color: #818589;" text="Neil Dalton">
-
-                    <!-- Friends Information -->
-                    <VBox>
-                        <TextFlow>
-                            <Text style="-fx-font-weight: bold;" text="Phone: " />
-                            <Text text="0449 152 209" />
-                        </TextFlow>
-                        <TextFlow>
-                            <Text style="-fx-font-weight: bold;" text="Age: " />
-                            <Text text="74 years old" />
-                        </TextFlow>
-                        <TextFlow>
-                            <Text style="-fx-font-weight: bold;" text="Likes: " />
-                            <Text text="walking" />
-                        </TextFlow>
-                    </VBox>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                    <effect>
-                        <ColorAdjust contrast="0.28" />
-                    </effect>
-                </TitledPane>
-                <TitledPane expanded="false" layoutX="366.0" layoutY="270.0" prefHeight="26.0" prefWidth="333.0" style="-fx-background-color: #D1FF98; -fx-border-color: #818589;" text="Jerry Franco">
-                    <content>
+                <VBox fx:id="friendsVBox" layoutX="366.0" layoutY="150.0" spacing="10">
+                    <TitledPane expanded="false" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="333.0" style="-fx-background-color: #D1FF98; -fx-border-color: #818589;" text="Neil Dalton">
                         <VBox>
-                            <children>
-                                <TextFlow>
-                                    <Text style="-fx-font-weight: bold;" text="Phone: " />
-                                    <Text text="0492 750 597" />
-                                </TextFlow>
-                                <TextFlow>
-                                    <Text style="-fx-font-weight: bold;" text="Age: " />
-                                    <Text text="63 years old" />
-                                </TextFlow>
-                                <TextFlow>
-                                    <Text style="-fx-font-weight: bold;" text="Likes: " />
-                                    <Text text="weightlifting" />
-                                </TextFlow>
-                            </children>
+                            <TextFlow>
+                                <Text style="-fx-font-weight: bold;" text="Phone: " />
+                                <Text text="0449 152 209" />
+                            </TextFlow>
+                            <TextFlow>
+                                <Text style="-fx-font-weight: bold;" text="Age: " />
+                                <Text text="74 years old" />
+                            </TextFlow>
+                            <TextFlow>
+                                <Text style="-fx-font-weight: bold;" text="Likes: " />
+                                <Text text="walking" />
+                            </TextFlow>
                         </VBox>
-                    </content>
-                    <effect>
-                        <ColorAdjust contrast="0.28" />
-                    </effect>
-                </TitledPane>
-                <TitledPane expanded="false" layoutX="366.0" layoutY="390.0" prefHeight="26.0" prefWidth="333.0" style="-fx-background-color: #D1FF98; -fx-border-color: #818589;" text="Drew Hayden">
-                    <content>
-                        <VBox>
-                            <children>
-                                <TextFlow>
-                                    <Text style="-fx-font-weight: bold;" text="Phone: " />
-                                    <Text text="0491 634 662" />
-                                </TextFlow>
-                                <TextFlow>
-                                    <Text style="-fx-font-weight: bold;" text="Age: " />
-                                    <Text text="78 years old" />
-                                </TextFlow>
-                                <TextFlow>
-                                    <Text style="-fx-font-weight: bold;" text="Likes: " />
-                                    <Text text="swimming" />
-                                </TextFlow>
-                            </children>
-                        </VBox>
-                    </content>
-                    <effect>
-                        <ColorAdjust contrast="0.28" />
-                    </effect>
-                </TitledPane>
+                        <opaqueInsets>
+                            <Insets />
+                        </opaqueInsets>
+                        <effect>
+                            <ColorAdjust contrast="0.28" />
+                        </effect>
+                    </TitledPane>
 
+                    <TitledPane expanded="false" prefHeight="26.0" prefWidth="333.0" style="-fx-background-color: #D1FF98; -fx-border-color: #818589;" text="Jerry Franco">
+                        <VBox>
+                            <TextFlow>
+                                <Text style="-fx-font-weight: bold;" text="Phone: " />
+                                <Text text="0492 750 597" />
+                            </TextFlow>
+                            <TextFlow>
+                                <Text style="-fx-font-weight: bold;" text="Age: " />
+                                <Text text="63 years old" />
+                            </TextFlow>
+                            <TextFlow>
+                                <Text style="-fx-font-weight: bold;" text="Likes: " />
+                                <Text text="weightlifting" />
+                            </TextFlow>
+                        </VBox>
+                        <effect>
+                            <ColorAdjust contrast="0.28" />
+                        </effect>
+                    </TitledPane>
+
+                    <TitledPane expanded="false" prefHeight="26.0" prefWidth="333.0" style="-fx-background-color: #D1FF98; -fx-border-color: #818589;" text="Drew Hayden">
+                        <VBox>
+                            <TextFlow>
+                                <Text style="-fx-font-weight: bold;" text="Phone: " />
+                                <Text text="0491 634 662" />
+                            </TextFlow>
+                            <TextFlow>
+                                <Text style="-fx-font-weight: bold;" text="Age: " />
+                                <Text text="78 years old" />
+                            </TextFlow>
+                            <TextFlow>
+                                <Text style="-fx-font-weight: bold;" text="Likes: " />
+                                <Text text="swimming" />
+                            </TextFlow>
+                        </VBox>
+                        <effect>
+                            <ColorAdjust contrast="0.28" />
+                        </effect>
+                    </TitledPane>
+                </VBox>
             </Pane>
         </top>
     </BorderPane>
 </AnchorPane>
+
