@@ -163,7 +163,7 @@ public class FitnessController {
         }
     }
 
-    // Method to update the ImageView and Label for a workout tile in FitnessCardio.fxml
+
     private void updateWorkoutTile(ImageView imageView, Label titleLabel, String title, String imagePath, String videoLink) {
         // Load and set the image in the ImageView
         try {
