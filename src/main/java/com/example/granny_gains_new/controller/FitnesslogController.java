@@ -20,13 +20,13 @@ import java.sql.SQLException;
 public class FitnesslogController {
 
     @FXML
-    private TableView<WorkoutEntry> diaryTableView;
+    TableView<WorkoutEntry> diaryTableView;
 
     @FXML
-    private TableColumn<WorkoutEntry, String> workoutNameColumn;
+    TableColumn<WorkoutEntry, String> workoutNameColumn;
 
     @FXML
-    private TableColumn<WorkoutEntry, String> dateCompletedColumn;
+    TableColumn<WorkoutEntry, String> dateCompletedColumn;
 
     @FXML
     private Button backButton;

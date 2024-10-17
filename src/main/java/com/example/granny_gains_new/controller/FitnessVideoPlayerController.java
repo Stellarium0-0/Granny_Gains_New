@@ -7,7 +7,7 @@ import javafx.scene.web.WebView;
 
 public class FitnessVideoPlayerController {
     @FXML
-    private WebView webView;
+    WebView webView;
 
     private String videoUrl;
 
@@ -35,8 +35,12 @@ public class FitnessVideoPlayerController {
 
 
     @FXML
-    private void handleBack() {
+    void handleBack() {
         Stage stage = (Stage) webView.getScene().getWindow();
         stage.close();
+    }
+
+    public WebView getWebView() {
+        return webView;
     }
 }
