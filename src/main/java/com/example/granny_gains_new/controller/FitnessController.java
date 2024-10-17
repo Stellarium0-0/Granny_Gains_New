@@ -166,7 +166,7 @@ public class FitnessController {
     }
 
     // Method to update the ImageView and Label for a workout tile in FitnessCardio.fxml
-    private void updateWorkoutTile(ImageView imageView, Label titleLabel, String title, String imagePath, String videoLink) {
+    void updateWorkoutTile(ImageView imageView, Label titleLabel, String title, String imagePath, String videoLink) {
         // Load and set the image in the ImageView
         try {
             Image thumbnail = new Image(getClass().getResource(imagePath).toExternalForm());
@@ -225,7 +225,7 @@ public class FitnessController {
     }
 
     // Method to add workout to diary database
-    private void addWorkoutToDiary(String workoutName) {
+    void addWorkoutToDiary(String workoutName) {
         String query = "INSERT INTO WorkoutDiary (workout_name, date_completed) VALUES (?, CURRENT_TIMESTAMP)";
 
         try (Connection conn = DatabaseConnection.getInstance();

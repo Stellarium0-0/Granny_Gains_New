@@ -12,8 +12,8 @@ public class DatabaseConnection {
     // Singleton instance of the Connection object.
     private static Connection instance = null;
 
-    // SQLite database URL
-    private static final String DATABASE_URL = "jdbc:sqlite:database.db"; // Update with the correct path if needed
+    // Default SQLite database URL
+    private static String databaseUrl = "jdbc:sqlite:database.db";
 
     /**
      * SQL schema for creating the necessary tables in the database.
@@ -55,11 +55,11 @@ public class DatabaseConnection {
                     " program_type TEXT, " +
                     " instructions TEXT " +
                     "); " +
-                    //Workout Log
+                    // Workout Diary Table
                     "CREATE TABLE IF NOT EXISTS WorkoutDiary (" +
-                    "workout_id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "workout_name TEXT NOT NULL," +
-                    "date_completed TIMESTAMP" +
+                    " workout_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    " workout_name TEXT NOT NULL," +
+                    " date_completed TIMESTAMP" +
                     ");" +
                     // User Program Session Table
                     "CREATE TABLE IF NOT EXISTS User_program_session (" +
@@ -91,7 +91,7 @@ public class DatabaseConnection {
                     " recipe_method TEXT, " +
                     " picture_url TEXT " +
                     "); " +
-                    // Meal Table (added)
+                    // Meal Table
                     "CREATE TABLE IF NOT EXISTS MealTable (" +
                     " meal_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     " recipe_name TEXT NOT NULL, " +
@@ -115,7 +115,6 @@ public class DatabaseConnection {
                     " FOREIGN KEY (user_id) REFERENCES User(email) " +
                     "); ";
 
-
     // Private constructor to prevent instantiation
     private DatabaseConnection() {}
 
@@ -129,17 +128,19 @@ public class DatabaseConnection {
         try {
             if (instance == null || instance.isClosed()) {
                 // Establish connection to SQLite database
-                instance = DriverManager.getConnection(DATABASE_URL);
+                instance = DriverManager.getConnection(databaseUrl);
                 System.out.println("Database connected successfully!");
 
-                // Create tables if they do not exist
-                createTables(instance);
+                if (databaseUrl.equals("jdbc:sqlite::memory:")) {
+                    createTables(instance); // Only create tables for in-memory tests
+                }
             }
         } catch (SQLException sqlEx) {
             System.err.println("Failed to connect to the database: " + sqlEx.getMessage());
         }
         return instance;
     }
+
 
     /**
      * This method executes the SQL schema to create the necessary tables in the database.
@@ -171,6 +172,32 @@ public class DatabaseConnection {
                 System.err.println("Error closing the database connection: " + e.getMessage());
             }
         }
+    }
+
+    /**
+     * Set a custom database URL, useful for in-memory testing.
+     *
+     * @param url The database URL.
+     */
+    public static void setDatabaseUrl(String url) {
+        databaseUrl = url;
+        instance = null; // Reset instance to reconnect with the new URL
+    }
+
+    /**
+     * For testing purposes only: sets a specific Connection instance and resets any existing one.
+     *
+     * @param connection the Connection instance to set for testing.
+     */
+    public static void setTestConnection(Connection connection) {
+        instance = connection;
+    }
+
+    /**
+     * Resets the database connection for testing purposes.
+     */
+    public static void resetConnection() {
+        instance = null;
     }
 
     public static void insertMeal(String recipeName, String description, int servings, int calories, String pictureUrl) {
