@@ -65,7 +65,7 @@ public class FitnessController {
         Stage stage = (Stage) StrengthButton.getScene().getWindow();
         double width = stage.getWidth();
         double height = stage.getHeight();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/FitnessStrength.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/FitnessStrengthNew.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }
@@ -75,7 +75,7 @@ public class FitnessController {
         Stage stage = (Stage) HIITButton.getScene().getWindow();
         double width = stage.getWidth();
         double height = stage.getHeight();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/FitnessHIIT.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/example/granny_gains_new/FitnessHIITNew.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setScene(scene);
     }

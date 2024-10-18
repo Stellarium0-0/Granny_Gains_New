@@ -16,30 +16,30 @@
             <left>
                 <Pane prefHeight="1080.0" prefWidth="377.0" style="-fx-background-color: #205072;" stylesheets="@styles.css" BorderPane.alignment="CENTER">
                     <children>
-                        <Button fx:id="HIITButton" layoutX="121.0" layoutY="586.0" mnemonicParsing="false" onAction="#NavHIIT" prefHeight="66.0" prefWidth="137.0" stylesheets="@styles.css" text="HIIT" />
-                        <Button fx:id="HomeButton" layoutX="123.0" layoutY="76.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="64.0" prefWidth="135.0" style="-fx-background-color: #1e81b0;" stylesheets="@styles.css" text="HOME">
+                        <Button fx:id="HIITButton" layoutX="123.0" layoutY="648.0" mnemonicParsing="false" onAction="#NavHIIT" prefHeight="66.0" prefWidth="137.0" stylesheets="@styles.css" text="HIIT" />
+                        <Button fx:id="HomeButton" layoutX="125.0" layoutY="138.0" mnemonicParsing="false" onAction="#handleBackToHome" prefHeight="64.0" prefWidth="135.0" style="-fx-background-color: #1e81b0;" stylesheets="@styles.css" text="HOME">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Button>
-                        <Button fx:id="StrengthButton" layoutX="121.0" layoutY="409.0" mnemonicParsing="false" onAction="#NavStrength" prefHeight="66.0" prefWidth="137.0" stylesheets="@styles.css" text="Strength" />
-                        <Button fx:id="CardioButton" layoutX="120.0" layoutY="246.0" mnemonicParsing="false" onAction="#NavCardio" prefHeight="66.0" prefWidth="137.0" stylesheets="@styles.css" text="Cardio" />
-                        <Button fx:id="LogButton" layoutX="109.0" layoutY="752.0" mnemonicParsing="false" onAction="#handleLog" prefHeight="49.0" prefWidth="162.0" style="-fx-background-color: #1e81b0;" stylesheets="@styles.css" text="Fitness Log">
+                        <Button fx:id="StrengthButton" layoutX="123.0" layoutY="471.0" mnemonicParsing="false" onAction="#NavStrength" prefHeight="66.0" prefWidth="137.0" stylesheets="@styles.css" text="Strength" />
+                        <Button fx:id="CardioButton" layoutX="122.0" layoutY="308.0" mnemonicParsing="false" onAction="#NavCardio" prefHeight="66.0" prefWidth="137.0" stylesheets="@styles.css" text="Cardio" />
+                        <Button fx:id="LogButton" layoutX="111.0" layoutY="814.0" mnemonicParsing="false" onAction="#handleLog" prefHeight="49.0" prefWidth="162.0" style="-fx-background-color: #1e81b0;" stylesheets="@styles.css" text="Fitness Log">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Button>
-                        <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="43.0" layoutY="252.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="45.0" layoutY="314.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@images/icons8-cardio-64 (1).png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="43.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="45.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@images/icons8-strength-50.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="43.0" layoutY="593.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="53.0" fitWidth="60.0" layoutX="45.0" layoutY="655.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@images/icons8-workout-50.png" />
                             </image>
