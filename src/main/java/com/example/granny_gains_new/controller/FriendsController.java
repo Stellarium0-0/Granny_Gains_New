@@ -21,22 +21,22 @@ public class FriendsController {
     private VBox friendInputBox;
 
     @FXML
-    private TextField AddFriend;
+    TextField AddFriend;
 
     @FXML
-    private TextField AddAge;
+    TextField AddAge;
 
     @FXML
-    private TextField AddPhoneNumber;
+    TextField AddPhoneNumber;
 
     @FXML
-    private TextField AddLikes;
+    TextField AddLikes;
 
     @FXML
-    private VBox friendsVBox;
+    VBox friendsVBox;
 
     @FXML
-    private Button BackButton;
+    Button BackButton;
 
     @FXML
     protected void showInputFields() {

@@ -12,9 +12,9 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.granny_gains_new.controller.FriendsController">
-    <BorderPane prefHeight="669.0" prefWidth="1098.0" style="-fx-background-color: #FFF;">
+    <BorderPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFF;">
         <top>
-            <Pane prefHeight="669.0" prefWidth="632.0" style="-fx-background-color: F5F5DC;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: F5F5DC;" BorderPane.alignment="CENTER">
                 <Label layoutX="376.0" layoutY="44.0" text="Social">
                     <font>
                         <Font size="40.0" />
