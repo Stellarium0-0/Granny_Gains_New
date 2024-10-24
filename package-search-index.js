@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.granny_gains_new","l":"com.example.granny_gains_new"},{"m":"com.example.granny_gains_new","l":"com.example.granny_gains_new.controller"},{"m":"com.example.granny_gains_new","l":"com.example.granny_gains_new.database"}];updateSearchResults();
